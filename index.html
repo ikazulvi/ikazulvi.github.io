@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ika Diana | Quality Assurance Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Socials -->
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(2, 6, 23, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 16px 0;
+      text-align: center;
+      z-index: 100;
+    }
+
+    nav a {
+      margin: 0 16px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 120px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* Hero */
+    .hero {
+  position: relative;
+  overflow: hidden;
+  }
+
+  .bg-shape {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(56,189,248,0.18);
+  filter: blur(120px);
+  border-radius: 50%;
+  animation: float 22s ease-in-out infinite;
+  }
+
+  .shape-1 {
+  top: 20%;
+  left: 10%;
+  }
+
+  .shape-2 {
+  bottom: 15%;
+  right: 15%;
+  animation-delay: 6s;
+  }
+
+  @keyframes float {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(40px, -30px); }
+  100% { transform: translate(0, 0); }
+  }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 600;
+    }
+
+    .hero span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      margin-top: 14px;
+      font-size: 1.1rem;
+      opacity: 0.85;
+      max-width: 600px;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 26px;
+      border-left: 4px solid #38bdf8;
+      padding-left: 12px;
+    }
+    .hero-socials {
+    margin-top: 26px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    }
+
+    .hero-socials a {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #38bdf8;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    }
+
+  .hero-socials a:hover {
+    background: #38bdf8;
+    color: #020617;
+    transform: translateY(-4px);
+    }
+
+    /* About */
+    .about p {
+      max-width: 800px;
+      opacity: 0.9;
+    }
+
+    /* Skills */
+    .skills span {
+      display: inline-block;
+      background: #020617;
+      border: 1px solid #1e293b;
+      padding: 10px 16px;
+      margin: 8px 6px 0 0;
+      border-radius: 999px;
+      font-size: 0.9rem;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 18px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .project-content p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    /* Resume Timeline */
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 120px 20px;
+    }
+
+    .container h1 {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      border-left: 4px solid #38bdf8;
+      padding-left: 12px;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .timeline-column h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      border: none;
+      padding: 0;
+    }
+
+    .card {
+      position: relative;   
+      overflow: hidden;
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .company {
+      color: #38bdf8;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .date {
+      font-size: 0.8rem;
+      opacity: 0.6;
+      margin-bottom: 12px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .card ul li {
+      margin-bottom: 6px;
+    }
+
+    .badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #38bdf8;
+    color: #020617;
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    border-radius: 999px;
+    font-weight: 600;
+    }
+
+    .highlight {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      background: #020617;
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+
+      text-align: center;
+      padding: 40px 0;
+      background: #020617;
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+    }
+    .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .lightbox.active {
+    display: flex;
+  }
+
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 16px;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  /* Optional */
+  .project-card img {
+    cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero -->
+   <div class="bg-shape shape-1"></div>
+   <div class="bg-shape shape-2"></div>
+  <section class="hero" id="home" data-aos="fade-up">
+    <h1>Hi, I'm <span>Ika Diana</span></h1>
+    <p>
+    Quality Assurance
+    </p>
+    <div class="hero-socials">
+    <a href="https://linkedin.com/in/ikadianazulvi" target="_blank" aria-label="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://github.com/ikazulvi" target="_blank" aria-label="GitHub">
+    <i class="fab fa-github"></i>
+    </a>
+
+    <a href="https://medium.com/@ikadianazulfi" target="_blank" aria-label="Medium">
+    <i class="fab fa-medium"></i>
+    </a>
+    </div>
+  </section>
+    
+  <!-- About -->
+  <section id="about" class="about" data-aos="fade-up">
+    <h2>About Me</h2>
+
+    <div style="display:grid; grid-template-columns: 320px 1fr; gap:40px; align-items:flex-start;">
+
+      <!-- Profile Card -->
+      <div style="  background:#020617;  border:1px solid #1e293b;  border-radius:18px;  padding:36px 28px;  min-height:540px;  text-align:center;">
+        <div style="    width:150px;    height:150px;    margin:0 auto 14px;    border-radius:50%;    overflow:hidden;    border:4px solid #38bdf8;  ">
+          <img src="images/profile.png" alt="Profile"
+          style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <h3 style="margin-bottom:4px;">Ika Diana</h3>
+        <p style="color:#38bdf8; font-size:0.9rem; margin-bottom:18px;">Quality Assurance </p>
+
+        <div style="display:flex; justify-content:space-around; margin-bottom:20px;">
+          <div>
+            <h4 style="color:#38bdf8;">5+</h4>
+            <p style="font-size:0.8rem; opacity:0.7;">Projects</p>
+          </div>
+          <div>
+            <h4 style="color:#38bdf8;">2+</h4>
+            <p style="font-size:0.8rem; opacity:0.7;">Years</p>
+          </div>
+        </div>
+
+        <a href="cv.pdf" style="display:inline-block; background:#38bdf8; color:#020617; padding:12px 24px; border-radius:999px; font-weight:600;">Download CV</a>
+      </div>
+
+      <!-- Professional Summary -->
+      <div>
+        <h3 style="font-size:1.4rem; margin-bottom:12px;">Professional Summary</h3>
+        <p style="opacity:0.9; margin-bottom:26px;">
+          A Quality Assurance Engineer with nearly 3 years of experience in software testing,
+          specializing in ensuring product quality through structured manual testing and
+          reliable automation. Experienced in translating requirements into clear test cases,
+          executing manual and automated testing using various tools such as Selenium Robotframework, JMeter, Postman and collaborating with cross-functional teams.
+
+        </p>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px;">
+          <div class="project-card"><div class="project-content"><strong>Based in</strong><br>Kota Bandung</div></div>
+          <div class="project-card"><div class="project-content"><strong>Availability</strong><br>Open to Work (Freelance & Fulltime)</div></div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+<section class="container" data-aos="fade-up">
+  <h1>Resume</h1>
+
+  <div class="timeline">
+
+    <!-- Experience -->
+    <div class="timeline-column">
+      <h2>Professional Journey</h2>
+
+      <div class="card">
+        <span class="badge">CURRENT</span>
+        <h3>Quality Assurance Tester</h3>
+        <p class="company">Newtronic Solution</p>
+        <p class="date">2024 - Present</p>
+        <ul>
+          <li>Reviewed requirements, specifications, and technical designs to identify test coverage and potential risks </li>
+          <li>Designed and executed manual and automated test cases for web, mobile, and desktop applications</li>
+          <li>Documented and reported defects clearly using Jira and Confluence, ensuring effective communication with development teams. </li>
+          <li>Developed UI automation scripts using Selenium and Robot Framework to support regression testing.</li>
+          <li>Conducted basic API, performance, and database validation using Postman, JMeter, and Dbeaver (Mysql, Postgresql) </li>
+          <li>Project: Queuing Management System</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>QA Analyst</h3>
+        <p class="company">Winosa Mitra Bharatadjaya</p>
+        <p class="date">2022 - 2024</p>
+        <ul>
+          <li>Took end-to-end responsibility for software testing, including test planning, execution, and reporting </li>
+          <li>Created and maintained test cases, test scenarios, and user guides in English</li>
+          <li>Executed regression testing and developed automation scripts using Selenium with Robot Framework</li>
+          <li>Collaborated with cross-functional teams to validate fixes and ensure release readiness</li>
+          <li>Projects: Xdemia (xdemia.com), Truexess (truexess.com)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="timeline-column">
+      <h2>Academic Background</h2>
+
+      <div class="card">
+        <h3>Bachelor of Engineering</h3>
+        <p class="company">Institut Teknologi Sumatera</p>
+        <p class="date">2018 - 2022</p>
+        <p class="highlight">GPA 3.54</p>
+      </div>
+
+      <div class="card">
+        <h3>SMA Tri Sukses</h3>
+        <p class="company">Science</p>
+        <p class="date">2015 - 2018</p>
+      </div>
+
+      <div class="card">
+        <h3>Certificates</h3>
+        <p>Operator Komputer Muda - BNSP</p>
+        <p class="date">2022</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+  
+  
+  <!-- Skills -->
+  <section id="skills" data-aos="fade-up">
+    <h2>Skills & Tools</h2>
+    <div class="skills">
+      <span>Manual Testing</span>
+      <span>Test Case & Scenario Design</span>
+      <span>Bug Reporting & Tracking</span>
+      <span>Automation Testing</span>
+      <span>API Testing</span>
+      <span>Database Validation</span>
+      <span>Robot Framework</span>
+      <span>SeleniumLibrary</span>
+      <span>Postman</span>
+      <span>Jmeter</span>
+      <span>MySql | PostgreSql</span>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img src="images/truexess.png" alt="TrueXess Project">
+        <div class="project-content">
+          <h3>TrueXess</h3>
+          <p>
+            TrueXess ia an management access tools that offers a certified solution that simplifies this process through automation, machine learning,
+            biometrics and other advanced features.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/xdemia.png" alt="Xdemia Project">
+        <div class="project-content">
+          <h3>Xdemia</h3>
+          <p>
+            Xdemia is academic platform that offers tools to teachers to create their online courses and programs, social media tools and networking tools.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/ique.png" alt="iQue">
+        <div class="project-content">
+          <h3>iQue</h3>
+          <p>
+          Digital queuing machine system using the latest technology used by industries such as banking, hospitals, government agencies and the private sector
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>📧 Email: <a href="mailto:ikadianazulfi@gmail.com">ikadianazulfi@gmail.com</a></p>
+    <p>💻 GitHub: <a href="https://github.com/ikazulvi">github.com/ikazulvi</a></p>
+    <p>🔗 LinkedIn: <a href="https://linkedin.com/in/ikadianazulvi">linkedin.com/in/ikadianazulvi</a></p>
+    <p>☎️ Whatsapp: <a href="http://wa.me/+6282387303903">+62 823-8730-3903</a></p>
+  </section>
+
+  <footer>
+    © 2026 Ika Diana · Quality Assurance
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  
+
+</script>
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true
+    });
+  </script>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+<span class="lightbox-close" id="lightboxClose">&times;</span>
+<img src="" alt="Preview" id="lightboxImg">
+</div>
+
+<script>
+  const images = document.querySelectorAll('.project-card img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+    }
+  });
+</script>
+
+</body>
+</html>
